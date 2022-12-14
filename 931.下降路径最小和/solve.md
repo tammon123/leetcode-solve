@@ -1,8 +1,16 @@
 # 动态规划
 ## 思路
 1. 要求下降路径最小和，我们可以转化为每一行的$matrix[i][j]=min(matrix[i-1][j-1], min(matrix[i-1][j], matrix[i-1][j+1])$而来
-2. 特别的当$i=0$时，$matrix[i][j]$不变;当$j=0$时，$matrix[i][j]=min(matrix[i-1][j], matrix[i-1][j+1])$;当$j=n-1$时，$matrix[i][j]=min(matrix[i-1][j-1], matrix[i-1][j])$
-
+- 特别的当$i=0$时，$matrix[i][j]$不变;
+   
+- 当$j=0$时，$matrix[i][j]=min(matrix[i-1][j], matrix[i-1][j+1])$;
+   
+- 当$j=n-1$时，$matrix[i][j]=min(matrix[i-1][j-1], matrix[i-1][j])$
+## 复杂度
+- 时间复杂度:
+  > $O(n^2)$
+- 空间复杂度:
+  > $O(1)$
 ## Code
 ```C++[]
 class Solution {

@@ -8,7 +8,7 @@
 - 空间复杂度:
   > $O(mn)$
 ### Code
-```C++[]
+```C++ []
 class Solution {
 public:
     vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k) {
@@ -50,7 +50,7 @@ public:
   > $O(mn)$
 
 ### Code
-```C++[]
+```C++ []
 class Solution {
 public:
     vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k) {

@@ -9,7 +9,7 @@
   > $O(mn)$
 
 ### Code
-```C++[]
+```C++ []
 class NumMatrix {
 public:
     NumMatrix(vector<vector<int>>& matrix) {

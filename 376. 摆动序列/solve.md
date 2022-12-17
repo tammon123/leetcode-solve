@@ -16,7 +16,7 @@
   > $O(n)$
 
 ### Code
-```C++[]
+```C++ []
 class Solution {
 public:
     int wiggleMaxLength(vector<int>& nums) {
@@ -51,7 +51,7 @@ public:
   > $O(1)$
 
 ### Code
-```C++[]
+```C++ []
 class Solution {
 public:
     int wiggleMaxLength(vector<int>& nums) {
@@ -73,7 +73,7 @@ public:
 - 空间复杂度:
   > $O(1)$
 ### Code
-```C++[]
+```C++ []
 class Solution {
 public:
     int wiggleMaxLength(vector<int>& nums) {

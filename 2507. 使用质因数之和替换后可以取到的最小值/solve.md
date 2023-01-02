@@ -5,9 +5,9 @@
 
 ## 复杂度
 - 时间复杂度:
-  > $O(n^{\frac{1}{4}}*logn)$，$n^{\frac{1}{4}}$为Pollard Rho算法复杂度，$logn$为迭代复杂度
+  > $O(x^{\frac{1}{4}}*n)$，$x^{\frac{1}{4}}$为Pollard Rho算法复杂度，n数字大小
 - 空间复杂度:
-  > $O(n^{\frac{1}{4}}*logn)$
+  > $O(n*logx)$，logx为递归所需栈空间
 
 ## Code
 ```C++ []

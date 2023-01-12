@@ -15,7 +15,7 @@ public:
         int add = 0;
         ListNode* node = new ListNode;
         ListNode* r = node;
-        while (l1 || l2) {
+        while (l1 || l2 || add > 0) {
             int x = l1 ? l1->val : 0;
             int y = l2 ? l2->val : 0;
             int sum = x + y + add;
@@ -24,10 +24,6 @@ public:
             r = r->next;
             add = sum / 10;
             l1 = l1 ? l1->next : l1; l2 = l2 ? l2->next : l2;
-        }
-        if (add != 0) {
-            ListNode* t = new ListNode(add % 10);
-            r->next = t;
         }
         ListNode* ans = node->next;
         delete node;

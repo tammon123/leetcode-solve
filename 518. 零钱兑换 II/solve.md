@@ -1,5 +1,6 @@
 # 动态规划
-## 思路
+## 方法一（动态规划）
+### 思路
 1. 求提供的$coins$能组成$amount$的组合方法
 2. 设$dp[i]$表示由$coins$组成金币$i$的组合法，那么$dp[amount]$就是我们要求的。边界条件，当$i=0$时，表示用任何$coins$都组成不了$0$，任何$coins$都不选的方法只有一种，即$dp[0]=1$
 3. 我们通过遍历$coins$，计算出它的贡献值，例如：
@@ -26,7 +27,7 @@ $dp[i]+=dp[i-coin]，i\in[coin,amount]$
 
 ### 复杂度
 - 时间复杂度:
-  > $O(amount*n)$，其中amount为金额，n为coins数量
+  > $O(amount*n)$，其中$amount$为金额，$n$为$coins$数量
 - 空间复杂度:
   > $O(amount)$
 

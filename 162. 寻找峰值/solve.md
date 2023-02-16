@@ -1,12 +1,12 @@
 # 二分查找
 ## 方法一(二分查找)：
 ### 思路
-1. 假设当前遍历到$nums[i]$有$i>1\&\&i<n-1\&\&nums[i-1]<nums[i]<nums[i+1]$说明找到峰值了，返回$i$
-2. 如果$i<n-1\&\&nums[i]<nums[i+1]$，说明峰值在右边，收敛左边界，反之收敛右边界
-3. 最终收敛为左边界
+1. 因为数组中总有峰值，那么假设当前遍历到$nums[i]$，如果有$nums[i]>nums[i+1]$，那么说明峰值再当前节点或者之前，收敛右边界，否则收敛左边界。
+
+2. 假设只有一个节点，根据条件，它一定是峰值，我们再处理循环条件时候令$left=0,right=n-1$，那么只需要$left<right$就行。最终返回$left$的位置。
 ### 复杂度
 - 时间复杂度:
-  > $O(logn)$，n为数组nums的大小，二分时间复杂度logn
+  > $O(logn)$，$n$为数组$nums$的大小，二分时间复杂度$O(logn)$
 - 空间复杂度:
   > $O(1)$
 
@@ -15,14 +15,15 @@
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
-        int n = nums.size(), l = 0, r = n - 1;
-        while (l <= r) {
-            int mid = l + ((r - l) >> 1);
-            if (mid > 1 && mid < n - 1 && nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) return mid;
-            else if (mid < n - 1 && nums[mid] < nums[mid + 1]) l = mid + 1;
-            else r = mid - 1;
+        int n = nums.size(), left = 0, right = n - 1;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (nums[mid] > nums[mid + 1]) {
+                right = mid;
+            }
+            else left = mid + 1;
         }
-        return l;
+        return left;
     }
 };
 ```
